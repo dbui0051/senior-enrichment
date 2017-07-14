@@ -9,7 +9,8 @@ const Campus = db.define('campus', {
 	    get: function () {
 	      return `/api/campus/${this.id}/image`;
 	    }
-	}
+	},
+	details: Sequelize.TEXT
 })
 
 module.exports = Campus

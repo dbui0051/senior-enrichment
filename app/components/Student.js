@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 class Student extends React.Component {
 	render () {
 		return (
-			<div>
+			<div className="container">
 				<h1>Students List</h1>
 				<div>
 					<ul>

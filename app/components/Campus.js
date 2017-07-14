@@ -6,17 +6,7 @@ import { postCampus } from '../reducers/campuses'
 class Campus extends React.Component {
 	render () {
 		return (
-			<div>
-				<form onSubmit={this.props.handleSubmit}>
-					<input
-		              type="text"
-		              placeholder="Add Campus"
-		              name="campus"
-		            />
-		            <button type="submit">
-			            Submit
-			         </button>
-				</form>
+			<div className="container">
 				<h1>Campuses List</h1>
 				<div>
 					<ul>
@@ -31,6 +21,16 @@ class Campus extends React.Component {
 						})}
 					</ul>
 				</div>
+				<form onSubmit={this.props.handleSubmit}>
+					<input
+		              type="text"
+		              placeholder="Add Campus"
+		              name="campus"
+		            />
+		            <button type="submit">
+			            Submit
+			         </button>
+				</form>
 			</div>
 		)
 	}

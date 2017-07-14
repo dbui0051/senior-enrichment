@@ -4,8 +4,8 @@ import { connect } from 'react-redux'
 class Home extends React.Component {
 	render () {
 		return (
-			<div>
-				<div>
+			<div className="home">
+				<div className="text-center text-inverted">
 					<h1>Welcome to Home Page</h1>
 				</div>
 			</div>

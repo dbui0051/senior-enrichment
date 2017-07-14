@@ -11,10 +11,10 @@ const studentsList = [
 ]
 
 const campusList = [
-	{name: 'New York University'},
-	{name: 'Manhatten Tech'},
-	{name: 'Queens Institute'},
-	{name: 'Brooklyn College'},
+	{name: 'New York University', details: 'Among the top educational institutions in the world. It has been around for decades.Come join the brightest minds our campus has to offer.'},
+	{name: 'Manhatten Tech', details: 'Among the top educational institutions in the world. It has been around for decades. Come join the brightest minds our campus has to offer.'},
+	{name: 'Queens Institute', details: 'Among the top educational institutions in the world. It has been around for decades. Come join the brightest minds our campus has to offer.'},
+	{name: 'Brooklyn College', details: 'Among the top educational institutions in the world. It has been around for decades. Come join the brightest minds our campus has to offer.'},
 ]
 
 db.sync({force: true})
@@ -32,5 +32,5 @@ db.sync({force: true})
 	.then(newStudent => newStudent.setCampus(2))
 })
 .then(() => console.log('Finished seeding database!'))
+.then(() => console.log('Press control + c to escape'))
 .catch(err => console.log(err))
-
