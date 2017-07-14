@@ -1,15 +1,12 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { Link, NavLink, withRouter } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 class Navbar extends React.Component {
 
 	render () {
 		return (
 			<nav>
-				<div>
-					<span>Navbar</span>
-				</div>
 				<div>
 					<Link to="/">HOME</Link>
 				</div>

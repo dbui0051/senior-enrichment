@@ -24,12 +24,12 @@ db.sync({force: true})
 .then(() => {
 	return Promise.map(studentsList, (student, index) => {
 		Student.create({name: student.name, email: student.email}, {include: [{model: Campus}]})
-		.then((newStudent) => newStudent.addCampus(index + 1))
+		.then((newStudent) => newStudent.setCampus(index + 1))
 	})
 })
 .then(() => {
 	Student.create({name: 'Random Dude', email: 'random@email.com'}, {include: [{model: Campus}]})
-	.then(newStudent => newStudent.addCampus(2))
+	.then(newStudent => newStudent.setCampus(2))
 })
 .then(() => console.log('Finished seeding database!'))
 .catch(err => console.log(err))

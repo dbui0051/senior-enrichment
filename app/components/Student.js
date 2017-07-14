@@ -6,13 +6,15 @@ class Student extends React.Component {
 	render () {
 		return (
 			<div>
-				<h1>Student List</h1>
+				<h1>Students List</h1>
 				<div>
 					<ul>
-						{this.props.students && this.props.students.map(student => {
+						{this.props.students.length > 0 && this.props.students.map(student => {
 							return (
 								<li key={student.id}>
-									<span>Student: {student.name} and Email: {student.email}</span>
+									<Link to={`/student/${student.id}`}>
+										{student.name}
+									</Link>
 								</li>
 							)
 						})}

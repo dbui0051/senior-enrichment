@@ -26,9 +26,9 @@ class Routes extends React.Component {
 					<Switch>
 						<Route exact path="/" component={ Home } />
 						<Route exact path="/campuses" component={ Campus } />
-						<Route exact path="/campus" component={ SingleCampus } />
+						<Route exact path="/campus/:id" component={ SingleCampus } />
 						<Route exact path="/students" component={ Student } />
-						<Route exact path="/student" component={ SingleStudent } />
+						<Route exact path="/student/:id" component={ SingleStudent } />
 						<Route component={ Home } />
 					</Switch>
 				</div>
