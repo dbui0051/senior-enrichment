@@ -17,6 +17,11 @@ select {
     select:invalid:hover {
       color: #bbb; }
 
+textarea {
+  rows: 4;
+  cols: 40;
+}
+
 .muted {
   opacity: 0.5; }
 
