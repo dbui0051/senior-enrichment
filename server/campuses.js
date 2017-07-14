@@ -21,7 +21,7 @@ router.post('/', (req, res, next) => {
 	.catch(next)
 })
 
-router.put('/', (req, res, next) => {
+router.put('/:id', (req, res, next) => {
 	Campus.update(req.body, {where: {id: req.params.id}, returning: true})
 	.then(() => res.sendStatus(204))
 	.catch(next)

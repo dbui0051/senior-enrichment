@@ -27,7 +27,7 @@ class SingleStudent extends React.Component {
 					}
 				</div>
 				<form onSubmit={(event) => handleSubmit(student, event)}>
-					<h2>Edit Student's Info</h2>
+					<h3>Edit Student's Info</h3>
 					<input
 		              type="text"
 		              placeholder="Edit Student Name"
@@ -47,7 +47,7 @@ class SingleStudent extends React.Component {
 			         </button>
 				</form>
 				<div>
-					<h2>Expel Student from Campus({student.campusId && student.campus.name})</h2>
+					<h3>Expel Student from Campus({student.campusId && student.campus.name})</h3>
 					<button onClick={(event) => handleClick(student, event)}>Expel Student</button>
 				</div>
 			</div>

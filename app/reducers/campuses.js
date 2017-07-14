@@ -4,11 +4,13 @@ const SET_CAMPUSES = 'SET_CAMPUSES'
 const GET_CAMPUS = 'GET_CAMPUS'
 const ADD_CAMPUS = 'ADD_CAMPUS'
 const REMOVE_CAMPUS = 'REMOVE_CAMPUS'
+const UPDATE_CAMPUS = 'UPDATE_CAMPUS'
 
 const setCampuses = campuses => ({type: SET_CAMPUSES, campuses})
 const getCampus = campus => ({type: GET_CAMPUS, campus})
 const addCampus = newCampus => ({type: ADD_CAMPUS, newCampus})
 const removeCampus = campus => ({type: REMOVE_CAMPUS, campus})
+const updateCampus = campus => ({type: UPDATE_CAMPUS, campus})
 
 export default function reducer (campuses = [], action) {
 
@@ -25,6 +27,11 @@ export default function reducer (campuses = [], action) {
 
 		case REMOVE_CAMPUS:
 			return campuses.filter(campus => campus.id !== +action.campus.id)
+
+		case UPDATE_CAMPUS:
+	      return campuses.map(campus => (
+	        action.campus.id === campus.id ? action.campus : campus
+	      ))
 
 		default:
 		return campuses
@@ -48,3 +55,10 @@ export const deleteCampus = campus => dispatch => {
 	axios.delete(`/api/campus/${campus.id}`)
 	.catch(err => console.log(err))
 }
+
+export const editCampus = campus => dispatch => {
+	axios.put(`/api/campus/${campus.id}`, campus)
+	.then(() => dispatch(fetchCampuses()))
+	.catch(err => console.log(err))
+}
+
